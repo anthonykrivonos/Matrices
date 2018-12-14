@@ -24,7 +24,7 @@ class Matrix {
 
       getDiagonal() {
             let diagonal = [];
-            for (var i = 0; i < min(this.rows, this.columns); i++) {
+            for (var i = 0; i < Math.min(this.rows, this.columns); i++) {
                   diagonal.push(this.get(i, i));
             }
             return diagonal;
@@ -42,4 +42,4 @@ mat1.set(1, 1, 1);
 mat1.set(1, 2, 2);
 mat1.set(1, 3, 3);
 
-console.log(mat1);
+console.log(mat1.getDiagonal());
