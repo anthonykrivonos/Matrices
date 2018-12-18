@@ -10,6 +10,12 @@ class Matrix {
             }
       }
 
+      copy() {
+            let copyMatrix = new Matrix(this.rows, this.columns);
+            copyMatrix.structure = this.structure.slice();
+            return copyMatrix;
+      }
+
       set(value, r, c) {
             this.structure[r][c] = value;
       }
@@ -30,6 +36,12 @@ class Matrix {
             return diagonal;
       }
 
+      getTransposed() {
+            let transposeMatrix = this.copy();
+            transposeMatrix.structure[0].map((col, i) => transposeMatrix.structure.map(row => row[i]));
+            return transposeMatrix;
+      }
+
       toString() {
             return this.structure.toString();
       }
@@ -43,3 +55,5 @@ mat1.set(1, 2, 2);
 mat1.set(1, 3, 3);
 
 console.log(mat1.getDiagonal());
+console.log(mat1);
+console.log(mat1.getTransposed());
